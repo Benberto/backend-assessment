@@ -6,6 +6,13 @@ document.getElementById("fortuneCookie").onclick = function () {
     alert(data);
   });
 };
+document.getElementById("Motivation").onclick = function () {
+  axios.get("http://localhost:4000/api/motivation/")
+  .then(function (response) {
+    const data = response.data;
+    alert(data);
+  });
+};
 
 document.getElementById("getClass").onclick = function () {
   axios
