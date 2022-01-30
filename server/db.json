@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "artist": "Parkway Drive",
+    "rating": 5,
+    "imageURL" : "https://t2.genius.com/unsafe/600x600/https:%2F%2Fimages.genius.com%2Fe453b7fce1c0b39a4252904fd3ae82cc.512x512x1.jpg"
+  },
+  {
+    "id": 2,
+    "artist": "Rezz",
+    "rating": 5,
+    "imageURL" : "https://i.pinimg.com/originals/96/5a/2c/965a2c7244a5c249fb302ced226f8af1.jpg"
+  },
+  {
+    "id": 3,
+    "artist": "I Prevail",
+    "rating": 4,
+    "imageURL" : "https://iprevailband.com/wp-content/uploads/2020/10/IP_PostTraumatic_Cover_F_RGB.jpg"
+  },
+  {
+    "id": 4,
+    "artist": "Avenged Sevenfold",
+    "rating": 5,
+    "imageURL" : "https://i.discogs.com/8B_orjptDDh8N9IlVU7CUz-XaAiYCRBB2W3RMOsI3-g/rs:fit/g:sm/q:90/h:605/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTEx/NDczNjYwLTE1MTY5/NzExMTAtOTY5MS5q/cGVn.jpeg"
+  },
+  {
+    "id": 5,
+    "artist": "The Plot In You",
+    "rating": 3,
+    "imageURL" : "https://images.genius.com/ce796ef5e16e7d68a6435019475a7277.1000x1000x1.jpg"
+  }
+]

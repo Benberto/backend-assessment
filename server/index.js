@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const {getAllArtists, deleteArtist, createArtist} = require('./artistController')
 
 const app = express();
 
@@ -7,6 +8,13 @@ const app = express();
 app.use(cors());
 
 app.use(express.json()); // When we want to be able to accept JSON.
+
+
+const artists = require('./db.json')
+
+app.get('/api/artists', getAllArtists)
+app.post('/api/artists/', createArtist)
+app.delete('/api/artists/:id', deleteArtist)
 
 app.get("/api/compliment", (req, res) => {
   const compliments = ["Gee, you're a smart cookie!",
@@ -27,7 +35,7 @@ app.get("/api/fortune", (req, res) => {
 					 "A faithful friend is a strong defense.",
 					 "A lifetime of happiness lies ahead of you.",
            "Adventure can be real happiness.",
-           "All will go well with your new project."
+           "All will go well with your new project.","Now is the time to try something new.","Love is a warm fire to keep the soul warm.","Have a beautiful day.","He who knows he has enough is rich.","You never know who you touch.","You will be blessed with longevity.","You will be successful in your work."
   ];
 
   
@@ -37,34 +45,5 @@ app.get("/api/fortune", (req, res) => {
   res.status(200).send(randomFortune);
   
 });
-
-app.get("/api/motivation", (req, res) => {
-  const motivation = ['All our dreams can come true, if we have the courage to pursue them. - Walt Disney',
-					 'The secret of getting ahead is getting started. - Mark Twain',
-					 "Everything you can imagine is real. - Pablo Picasso",
-           "Do one thing every day that scares you. - Eleanor Roosevelt",
-           
-  ];
-
-  
-  let randomIndex = Math.floor(Math.random() * motivation.length);
-  let randomMotivation = motivation[randomIndex];
-
-  res.status(200).send(randomMotivation);
-  
-});
-
-
-
-app.get('/api/students', (req, res) => {
-  const students = ['Ben', 'Ryan', 'Lucas', 'Anthony', 'Brandon', 'Jaun', 'Lukas', 'Tatianna', 'Whitney', 'Will']
-  res.status(200).send(students)
-});
-
-app.get('/api/instructors', (req, res) => {
-  const instructors = ['Eric', 'DJ']
-  res.status(200).send(instructors)
-});
-
 
 app.listen(4000, () => console.log("Server running on 4000"));
