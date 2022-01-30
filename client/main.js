@@ -23,7 +23,7 @@ function submitHandler(evt) {
     rating: rating.value,
     imageURL: imageURL.value
   }
-
+  
   createArtist(bodyObj)
 
   title.value = ''
@@ -38,7 +38,7 @@ function createArtistCard(artist){
 
   artistCard.innerHTML = `<img alt='Artist cover' src=${artist.imageURL}
   class="artist-cover"/>
-  <p class="artist-title">${artist.artist}</p>
+  <p class="artist-title">${artist.title}</p>
   <div class="btn-containers">
       <button style="width: 30px;" onclick="updateArtist(${artist.id}, 'minus')">-</button>
       <p class="artist-rating">${artist.rating} Stars</p>

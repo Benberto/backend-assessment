@@ -13,7 +13,7 @@ app.use(express.json()); // When we want to be able to accept JSON.
 const artists = require('./db.json')
 
 app.get('/api/artists', getAllArtists)
-app.post('/api/artists/', createArtist)
+app.post('/api/artists', createArtist)
 app.delete('/api/artists/:id', deleteArtist)
 
 app.get("/api/compliment", (req, res) => {
