@@ -10,6 +10,7 @@ const errCallback = err => console.log(err.response.data)
 const getAllArtists = () => axios.get(artistURL).then(artistsCallback).catch(errCallback)
 const deleteArtist = id => axios.delete(`${artistURL}/${id}`).then(artistsCallback).catch(errCallback)
 const createArtist = body => axios.post(artistURL, body).then(artistsCallback).catch(errCallback)
+const updateArtist = (id, type) => axios.put(`${artistURL}/${id}`, {type}).then(artistsCallback).catch(errCallback)
 
 function submitHandler(evt) {
   evt.preventDefault()
@@ -40,10 +41,9 @@ function createArtistCard(artist){
   class="artist-cover"/>
   <p class="artist-title">${artist.title}</p>
   <div class="btn-containers">
-      <button style="width: 30px;" onclick="updateArtist(${artist.id}, 'minus')">-</button>
+      <button class="plus" onclick="updateArtist(${artist.id}, 'plus')">+</button>
       <p class="artist-rating">${artist.rating} Stars</p>
-      <button style="width: 30px;" onclick="updateArtist(${artist.id}, 'plus')">+</button>
-  
+      <button class="plus" onclick="updateArtist(${artist.id}, 'minus')">-</button>
   </div>
   <button onclick="deleteArtist(${artist.id})">Delete</button>`
 

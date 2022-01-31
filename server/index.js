@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const {getAllArtists, deleteArtist, createArtist} = require('./artistController')
+const {getAllArtists, deleteArtist, createArtist, updateArtist} = require('./artistController')
 
 const app = express();
 
@@ -15,6 +15,7 @@ const artists = require('./db.json')
 app.get('/api/artists', getAllArtists)
 app.post('/api/artists', createArtist)
 app.delete('/api/artists/:id', deleteArtist)
+app.put('/api/artists/:id', updateArtist)
 
 app.get("/api/compliment", (req, res) => {
   const compliments = ["Gee, you're a smart cookie!",
